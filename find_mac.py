@@ -5,8 +5,6 @@ from scapy.all import *
 
 
 def find_mac(ip):
-        #res, unans = sr(IP(dst="192.168.39.241")/ TCP(flags="S", dport=(1, 443)))
-        #res.nsummary( lfilter=lambda s, r: (r.haslayer(TCP) and (r.getlayer(TCP).flags & 2)))
 
         ip_gw = conf.route.route("0.0.0.0")[2]
 
@@ -47,15 +45,8 @@ def get_mac(target_ip):
 
 
 def main():
-    find_mac('192.168.32.0/24')
-    find_mac('192.168.33.0/24')
-    find_mac('192.168.34.0/24')
-    find_mac('192.168.35.0/24')
-    find_mac('192.168.36.0/24')
-    find_mac('192.168.37.0/24')
-    find_mac('192.168.38.0/24')
-    find_mac('192.168.39.0/24')
-    #local_scan('192.168.39.106')
+    find_mac('ip/mask')
+    local_scan('ip/mask')
 
 
 if __name__ == "__main__":
